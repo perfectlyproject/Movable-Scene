@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Perfectly Project - Movable Scene Simple</title>
+    <link rel="stylesheet" href="../dist/ppMovableScene.css">
+    <script src="../dist/ppMovableScene.js"></script>
+    <style>
+        #scene {
+            height: 600px;
+            width: 100%;
+        }
+        .example-shape-1 {
+            height: 50px;
+            width: 50px;
+            background: red;
+        }
+        .example-shape-2 {
+            height: 50px;
+            width: 50px;
+            background: blue;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+<div id="scene">
+</div>
+<script>
+    var movableScene = new PPMovableScene({
+        selector: '#scene', // target where will be create scene
+        animate: true, // Random animate for item
+        // List shapes in this place we have to define breakpoint which is used to upwards. For example it's working like media query min-width in css
+        shapes: {
+            1200: [
+                {
+                    type: 'example-shape-1', // class for item
+                    left: 10, // Started left position in percent
+                    top: 30, // Started top position in percent
+                    ratio: 0.7, // Ratio is used to set how long shift will be when we mouse move in any direction
+                    speed: 900, // Setup speed transition in milliseconds
+                    direction: 'invert'
+                },
+                {
+                    type: 'example-shape-2',
+                    left: 40,
+                    top: 70,
+                    ratio: 0.04,
+                    speed: 500,
+                },
+                {
+                    type: 'example-shape-2',
+                    left: 80,
+                    top: 20,
+                    ratio: 0.1,
+                    speed: 1000,
+                },
+                {
+                    type: 'example-shape-1',
+                    left: 80,
+                    top: 90,
+                    ratio: 0.1,
+                    speed: 1000,
+                }
+            ],
+            0: [
+                {
+                    type: 'example-shape-2',
+                    left: 10,
+                    top: 70,
+                    ratio: 0.04,
+                    speed: 500,
+                }
+            ]
+        }
+    });
+</script>
+<button onClick="movableScene.stop()">Stop</button>
+<button onClick="movableScene.run()">Start</button>
+</body>
+</html>

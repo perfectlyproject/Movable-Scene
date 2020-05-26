@@ -1,0 +1,55 @@
+{
+  "author": {
+    "name": "Slawomir Lech"
+  },
+  "bugs": {
+    "url": "https://github.com/perfectlyproject/movable-scene/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "uglifyjs-webpack-plugin": "^1.2.5"
+  },
+  "deprecated": false,
+  "description": "For create movable items on scene.",
+  "devDependencies": {
+    "autoprefixer": "^8.6.5",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "css-loader": "^0.28.11",
+    "expose-loader": "^0.7.5",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "file-loader": "^1.1.11",
+    "node-sass": "^4.14.1",
+    "postcss-loader": "^2.1.6",
+    "sass-loader": "^7.3.1",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "homepage": "https://github.com/perfectlyproject/movable-scene#readme",
+  "keywords": [
+    "mousemove",
+    "scene",
+    "shapes",
+    "movable"
+  ],
+  "license": "MIT",
+  "main": "dist/ppmovablescene.min.js",
+  "name": "pp-movable-scene",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/perfectlyproject/movable-scene.git"
+  },
+  "scripts": {
+    "compile": "webpack --env.NODE_ENV=develop",
+    "production": "webpack --env.NODE_ENV=production",
+    "watch": "webpack --watch --env.NODE_ENV=develop --develop"
+  },
+  "version": "0.0.5"
+}

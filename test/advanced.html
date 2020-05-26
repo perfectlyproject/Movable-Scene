@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Perfectly Project - Movable Scene advanced</title>
+    <link rel="stylesheet" href="icons/style.css">
+    <link rel="stylesheet" href="../dist/ppMovableScene.min.css">
+    <script src="../dist/ppMovableScene.js"></script>
+</head>
+<body>
+<div id="scene">
+    <img src="icons/logo.png" class="logo" alt="">
+</div>
+<script>
+    var movableScene = new PPMovableScene({
+        selector: '#scene', // target where will be create scene
+        animate: true, // Random animate for item
+        // List shapes in this place we have to define breakpoint which is used to upwards. For example it's working like media query min-width in css
+        shapes: {
+            1200: [
+                {
+                    type: 'pi-shape_1', // class for item
+                    left: 5, // Started left position in percent
+                    top: 20, // Started top position in percent
+                    ratio: 0.1, // Ratio is used to set how long shift will be when we mouse move in any direction
+                    speed: 900, // Setup speed transition in milliseconds
+                    direction: 'invert'
+                },
+                {
+                    type: 'pi-shape_2',
+                    left: 40,
+                    top: 70,
+                    ratio: 0.04,
+                    speed: 500,
+                },
+                {
+                    type: 'pi-shape_6',
+                    left: 50,
+                    top: 20,
+                    ratio: 0.1,
+                    speed: 1000,
+                },
+                {
+                    type: 'pi-shape_3',
+                    left: 80,
+                    top: 20,
+                    ratio: 0.1,
+                    speed: 1000,
+                    direction: 'invert'
+                },
+                {
+                    type: 'pi-shape_4',
+                    left: 20,
+                    top: 90,
+                    ratio: 0.1,
+                    speed: 1000,
+                },
+                {
+                    type: 'pi-shape_1',
+                    left: 80,
+                    top: 70,
+                    ratio: 0.1,
+                    speed: 1000,
+                    direction: 'invert'
+                }
+            ],
+            0: [
+                {
+                    type: 'pi-shape_6',
+                    left: 30,
+                    top: 20,
+                    ratio: 0.1,
+                    speed: 1000,
+                },
+                {
+                    type: 'pi-shape_3',
+                    left: 80,
+                    top: 20,
+                    ratio: 0.1,
+                    speed: 1000,
+                    direction: 'invert'
+                },
+                {
+                    type: 'pi-shape_4',
+                    left: 10,
+                    top: 50,
+                    ratio: 0.1,
+                    speed: 1000,
+                },
+                {
+                    type: 'pi-shape_1',
+                    left: 60,
+                    top: 60,
+                    ratio: 0.1,
+                    speed: 1000,
+                    direction: 'invert'
+                }
+            ]
+        }
+    });
+</script>
+<div class="buttons-wrapper">
+    <button onClick="movableScene.stop()" class="btn-movable-stop">Stop</button>
+    <button onClick="movableScene.run()" class="btn-movable-start">Start</button>
+</div>
+</body>
+</html>
